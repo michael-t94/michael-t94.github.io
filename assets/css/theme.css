@@ -1,43 +1,84 @@
-html {box-sizing: border-box;}
+html {
+    box-sizing: border-box;
+    font-size: 100%; /* default font size 16px */
+}
+
 * {box-sizing: inherit;}
 
-#sidebar {
-    width: 25%;
-    height: 100%;
+body {
+    /* font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    /* font-weight: 400; */
+}
+
+#profile {
     position: fixed;
     top: 0;
     left: 0;
-    overflow-y: auto;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 36px 18px;
-}
-
-#content {
-    width: 75%;
+    width: 20%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 25%;
-    padding: 30px;
+    overflow: auto;
+    color: white;
+    background-color: rgb(44, 44, 44);
+    text-align: center;
+    padding-top: 20px;
 }
 
-#avatar img {
-    width: 135px;
-    height: 135px;
-    border-radius: 50%;
+nav {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    right: 0;
+    text-align: center;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    background-color: white;
+    z-index: 1;
+    color: rgb(181, 181, 181);
+    /* font-size: .7rem; */
+}
+
+nav a {
+    color: rgb(50, 50, 50);
+    text-decoration: none;
 }
 
 nav ul {
-    list-style-type: none;
+    margin: auto;
     padding: 0;
 }
 
-a:link {
-    text-decoration: none; /* remove underline */
-    color: white;
+nav li {
+    display: inline;
+    /* border: 1px solid rgb(1, 1, 1); */
+    /* margin: 2px; */
 }
 
-a:hover {
+#posts {
+    position: absolute;
+    top: 3rem;
+    left: 20%;
+    padding: 0 20px 20px 20px;
 }
+
+#avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+/*a:link {
+    text-decoration: none; [> remove underline <]
+    color: rgb(44, 44, 44);
+}*/
+
+/*a:visited {
+    color: rgb(44, 44, 44);
+}*/
+
+a:hover {
+    color: red;
+}
+
+/*pre {
+    font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal,
+    Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+}*/

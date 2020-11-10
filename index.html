@@ -8,74 +8,86 @@
     </head>
 
     <body>
-        <div id="sidebar">
-            <a href="index.html" id="avatar"><img src="assets/img/avatar.jpeg" alt="avatar"></a>
-            <h1>Michael</h1>
-            <p>I am Michael</p>
-            <nav>
+        <header>
+            <div id="profile">
+                <a href="index.html" id="avatar"><img src="assets/img/avatar.jpeg" alt="avatar"></a>
+                <h1>Michael</h1>
+            </div>
+
+            <nav id="navigation">
                 <ul>
                     <li><a href="index.html">HOME</a></li>
+                    <small>&bull;</small>
                     <li><a href="./categories.html">CATEGORIES</a></li>
+                    <small>&bull;</small>
                     <li><a href="./tags.html">TAGS</a></li>
+                    <small>&bull;</small>
                     <li><a href="./archives.html">ARCHIVES</a></li>
+                    <small>&bull;</small>
                     <li><a href="./about.html">ABOUT</a></li>
+                    <small>&bull;</small>
+                    <li><a href="./downloads.html">DOWNLOADS</a></li>
                 </ul>
             </nav>
-        </div>
+        </header>
 
-        <div id="content">
-            <h1>Header 1</h1>
-            <p>Our <em>breads</em> are made daily from highest-quality whole grain flour,
-            water, salt, and yeast or sourdough starter. Simply and naturally,
-            and never any preservatives. Patience is key to achieving the
-            proper level of fermentation and baking each loaf to perfection.
-            Available in whole grain, sourdough, olive loaf, classic rye, and
-            potato-onion.</p>
+        <div id="posts">
+            <article>
+                <header>
+                    <h2>Basic LLDB commands</h2>
+                    <p><small>Posted on <time datetime="2020-07-09">July 9, 2020</time>
+                        &bull; Tagged with programming, lldb, debugging</small></p>
+                </header>
 
-            <h2>Header 2</h2>
-            <blockquote>
-                Our breads are made daily from highest-quality whole grain flour,
-                water, salt, and yeast or sourdough starter. Simply and naturally,
-                and never any preservatives. Patience is key to achieving the
-                proper level of fermentation and baking each loaf to perfection.
-                Available in whole grain, sourdough, olive loaf, classic rye, and
-                potato-onion.
-            </blockquote>
+                <p>This is a basic tutorial about how to use lldb to debug a
+                program. I will only introduce some basic commands in this post.</p>
+                <hr>
+            </article>
 
-            <h3>Header 3</h3>
-            <pre>
-                // Javascript code with syntax highlighting.
-                var fun = function lang(l)
-                {
-                    dateformat.i18n = require('./lang/' + l)
-                    return true;
-                }
-            </pre>
+            <article>
+                <header>
+                    <h2>The quest to the perfect Makefile</h2>
+                    <p><small>Posted on <time datetime="2020-10-23">Oct 23, 2020</time>
+                        &bull; Tagged with make, tutorial</small></p>
+                </header>
 
-            <h4>Header 4</h4>
-            <ul>
-                <li>Thi is an unordered list following a header.</li>
-                <li>Thi is an unordered list following a header.</li>
-                <li>Thi is an unordered list following a header.</li>
-            </ul>
+                <p>I have been using cmake for a while because I think writting
+                a good Makefile is a tricky task. Unfortunately, cmake is not always
+                available and writting a Makefile is the only solution. I decided
+                to spend some time on writting a small Makefile structure that
+                I could use for ...</p>
+                <hr>
+            </article>
 
-            <h5>Header 5</h5>
-            <ol>
-                <li>This is an ordered list following a header.</li>
-                <li>This is an ordered list following a header.</li>
-                <li>This is an ordered list following a header.</li>
-            </ol>
+            <!-- <article> -->
+                <!-- <header> -->
+                    <!-- <h2>The quest to the perfect Makefile</h2> -->
+                    <!-- <p><small>Posted on <time datetime="2020-10-23">Oct 23, 2020</time> -->
+                        <!-- &bull; Tagged with make, tutorial</small></p> -->
+                <!-- </header> -->
 
-            <h6>Header 6</h6>
-            <p>Our breads are made daily from highest-quality whole grain flour,
-            water, salt, and yeast or sourdough starter. Simply and naturally, and
-            never any preservatives. Patience is key to achieving the proper level
-            of fermentation and baking each loaf to perfection. Available in whole
-            grain, sourdough, olive loaf, classic rye, and potato-onion.</p>
+                <!-- <p>I have been using cmake for a while because I think writting -->
+                <!-- a good Makefile is a tricky task. Unfortunately, cmake is not always -->
+                <!-- available and writting a Makefile is the only solution. I decided -->
+                <!-- to spend some time on writting a small Makefile structure that -->
+                <!-- I could use for ...</p> -->
+                <!-- <hr> -->
+            <!-- </article> -->
 
-            <footer>
-                &copy; ALL RIGHTS RESERVED.
-            </footer>
+            <!-- <article> -->
+                <!-- <header> -->
+                    <!-- <h2>The quest to the perfect Makefile</h2> -->
+                    <!-- <p><small>Posted on <time datetime="2020-10-23">Oct 23, 2020</time> -->
+                        <!-- &bull; Tagged with make, tutorial</small></p> -->
+                <!-- </header> -->
+
+                <!-- <p>I have been using cmake for a while because I think writting -->
+                <!-- a good Makefile is a tricky task. Unfortunately, cmake is not always -->
+                <!-- available and writting a Makefile is the only solution. I decided -->
+                <!-- to spend some time on writting a small Makefile structure that -->
+                <!-- I could use for ...</p> -->
+                <!-- <hr> -->
+            <!-- </article> -->
         </div>
     </body>
 </html>
