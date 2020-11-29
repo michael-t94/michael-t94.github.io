@@ -1,0 +1,13 @@
+title: Michael's Blog # title of the site
+
+# front matter defaults
+defaults:
+  -
+    scope:
+      path: "" # empty string means all files in the project
+      type: # apply to following types of files
+        - "pages"
+        - "posts"
+        - "drafts"
+    values:
+      layout: "default"

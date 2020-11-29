@@ -1,93 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="author" content="Michael Tang">
-        <title>Cybertron - Home</title>
-        <link rel="stylesheet" href="assets/css/theme.css">
-    </head>
+---
+layout: default
+---
+<!--
+    TO DO
+    1. Add TAG page
+    2. Add a go-to-the-top button
+    3. Add a footer
+    4. Add responsive design to suit mobile device
+-->
 
-    <body>
-        <header>
-            <div id="profile">
-                <a href="index.html" id="avatar"><img src="assets/img/avatar.jpeg" alt="avatar"></a>
-                <h1>Michael</h1>
-            </div>
-
-            <nav id="navigation">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <small>&bull;</small>
-                    <!-- <li><a href="./categories.html">CATEGORIES</a></li>
-                    <small>&bull;</small>
-                    <li><a href="./tags.html">TAGS</a></li>
-                    <small>&bull;</small>
-                    <li><a href="./archives.html">ARCHIVES</a></li>
-                    <small>&bull;</small>
-                    <li><a href="./about.html">ABOUT</a></li>
-                    <small>&bull;</small> -->
-                    <li><a href="./downloads.html">DOWNLOADS</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div id="posts">
-            <article>
-                <header>
-                    <h2>Basic LLDB commands</h2>
-                    <p><small>Posted on <time datetime="2020-07-09">July 9, 2020</time>
-                        &bull; Tagged with programming, lldb, debugging</small></p>
-                </header>
-
-                <p>This is a basic tutorial about how to use lldb to debug a
-                program. I will only introduce some basic commands in this post.</p>
-                <hr>
-            </article>
-
-            <article>
-                <header>
-                    <h2>The quest to the perfect Makefile</h2>
-                    <p><small>Posted on <time datetime="2020-10-23">Oct 23, 2020</time>
-                        &bull; Tagged with make, tutorial</small></p>
-                </header>
-
-                <p>I have been using cmake for a while because I think writting
-                a good Makefile is a tricky task. Unfortunately, cmake is not always
-                available and writting a Makefile is the only solution. I decided
-                to spend some time on writting a small Makefile structure that
-                I could use for ...</p>
-                <hr>
-            </article>
-
-            <!-- <article> -->
-                <!-- <header> -->
-                    <!-- <h2>The quest to the perfect Makefile</h2> -->
-                    <!-- <p><small>Posted on <time datetime="2020-10-23">Oct 23, 2020</time> -->
-                        <!-- &bull; Tagged with make, tutorial</small></p> -->
-                <!-- </header> -->
-
-                <!-- <p>I have been using cmake for a while because I think writting -->
-                <!-- a good Makefile is a tricky task. Unfortunately, cmake is not always -->
-                <!-- available and writting a Makefile is the only solution. I decided -->
-                <!-- to spend some time on writting a small Makefile structure that -->
-                <!-- I could use for ...</p> -->
-                <!-- <hr> -->
-            <!-- </article> -->
-
-            <!-- <article> -->
-                <!-- <header> -->
-                    <!-- <h2>The quest to the perfect Makefile</h2> -->
-                    <!-- <p><small>Posted on <time datetime="2020-10-23">Oct 23, 2020</time> -->
-                        <!-- &bull; Tagged with make, tutorial</small></p> -->
-                <!-- </header> -->
-
-                <!-- <p>I have been using cmake for a while because I think writting -->
-                <!-- a good Makefile is a tricky task. Unfortunately, cmake is not always -->
-                <!-- available and writting a Makefile is the only solution. I decided -->
-                <!-- to spend some time on writting a small Makefile structure that -->
-                <!-- I could use for ...</p> -->
-                <!-- <hr> -->
-            <!-- </article> -->
-        </div>
-    </body>
-</html>
+{% for post in site.posts %}
+<article class="post-review">
+    <header>
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p><small class="post-info">Posted on {{ post.date | date_to_string: "ordinal", "US" }}</small></p>
+    </header>
+    {{ post.content | truncate: 400 }}
+</article>
+{% endfor %}
