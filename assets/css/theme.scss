@@ -28,26 +28,17 @@ body {
     padding-top: 20px;
 }
 
-#personal-info {
+#avatar {
+    display: block;
     margin-top: 50px;
 }
 
-nav {
-    /* height: 3rem; */
-    position: fixed;
-    top: 0;
-    left: 20%;
-    right: 0;
-    text-align: center;
-    border-bottom: 1px solid rgb(200, 200, 200);
-    background-color: white;
-    z-index: 1;
-    color: rgb(181, 181, 181);
-    font-size: .88em;
+#avatar img {
+    width: 150px;
+    border-radius: 50%;
 }
 
-nav ul {
-    // padding: 0;
+#profile ul, #main-navigation ul {
     list-style-type: none;
     display: flex; /* turn ul into a flexbox */
     justify-content: center;
@@ -55,14 +46,54 @@ nav ul {
     margin: 0;
 }
 
-nav li {
-    /* border: 1px solid rgb(1, 1, 1); */
-    /* margin: 2px; */
+/* icons */
+#profile ul a {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.icon-github {
+    background-color: #111010;
+}
+
+a {
+    text-decoration: none;
+}
+
+#main-navigation a, .post-review a {
+    color: #cb0000;
+}
+
+#main-navigation a:hover, .post-review a:hover {
+    color: #e3001c;
+    text-decoration: underline;
+}
+
+#main-navigation a {
+    display: inline-block;
+    padding: .4rem;
+}
+
+#main-navigation {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    right: 0;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    background-color: white;
+    z-index: 1;
+    color: rgb(181, 181, 181);
+    font-size: .88em;
 }
 
 #main-content {
     position: absolute;
-    top: 3rem;
+    top: 48px;
     left: 20%;
     right: 0;
     padding: 0 40px 0px 40px;
@@ -78,20 +109,14 @@ nav li {
     color: #666565;
 }
 
-#avatar img {
-    width: 150px;
-    border-radius: 50%;
-}
-
 .text-box {
     background-color: #f3f3f3;
     border-radius: 4px;
     padding: 1px 5px;
-    margin: 0 .15rem;
+    white-space: nowrap; // forbid line break
 }
 
 .command-line-code {
-    white-space: nowrap; // forbid line break
     font-family: 'Go Mono';
     font-size: .9rem;
 }
@@ -100,25 +125,30 @@ nav li {
     margin: 0;
 }
 
-figure img {
+.screenshots img {
     width: 100%;
 }
 
-figcaption {
+.screenshots figcaption {
     text-align: center;
     font-size: 80%;
 }
 
 .filename {
-    /* font-family: 'Go Mono'; */
-    /* font-size: .9rem; */
-    /* color: #00750a; */
+    font-family: 'Go Mono';
+    font-size: .85rem;
+    color: #00750a;
 }
 
 .cmake-command {
     font-family: "Go Mono";
     font-weight: bold;
     color: #2b63a8;
+}
+
+.language-cmake {
+    font-family: "Go Mono";
+    font-size: .8rem;
 }
 
 .cmake-var {
@@ -134,27 +164,6 @@ figcaption {
 .highlight pre {
     font-family: "Go Mono";
     background-color: #f3f3f3;
+    overflow: auto;
+    padding: 0 10px;
 }
-
-.language-cmake {
-    font-family: "Go Mono";
-    font-size: .8rem;
-}
-
-/* link style */
-a {
-    color: #cb0000;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #e3001c;
-    text-decoration: underline;
-}
-
-nav ul li a {
-    display: block;
-    padding: .4rem;
-    /* margin: .4rem; */
-}
-

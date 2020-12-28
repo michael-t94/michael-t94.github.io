@@ -6,10 +6,7 @@ file1: CMakeSystemSpecificInitialize.cmake
 file2: Darwin-Initialize.cmake
 value: /Applications/.../MacOSX10.15.sdk
 ---
-<!--
-    TO DO:
-    1. Add a footnote about Darwin
--->
+
 <p>After I have upgraded my operating system to the Big Sur, when I ran
 <code class="text-box command-line-code">cmake .</code> in my project's build tree, I
 got a piece of warning message from cmake and I couldn't build my target
@@ -38,25 +35,25 @@ back what cmake has done. Let's first take a look at Part 2.</p>
 
 <p>The Call Stack in Part 2 gives you an idea about how cmake works. When
 cmake begins to process the source tree of my project, it uses the
-<span class="filename">CMakeLists.txt</span> file in the top-level source tree as an entrance point.
+<span class="text-box filename">CMakeLists.txt</span> file in the top-level source tree as an entrance point.
 According to the Call Stack, I guess that(I have to guess cause I don't know yet how cmake
 works internally)when cmake sees a
 <span class="cmake-command">project()</span> command at line 8 of my
-<span class="filename">CMakeLists.txt</span> file, it calls another cmake file which is
-<span class="filename">{{ page.file1 }}</span>. So let's check that file then.</p>
+<span class="text-box filename">CMakeLists.txt</span> file, it calls another cmake file which is
+<span class="text-box filename">{{ page.file1 }}</span>. So let's check that file then.</p>
 
-<p>At line 21 in <span class="filename">{{ page.file1 }}</span>, there is an
+<p>At line 21 in <span class="text-box filename">{{ page.file1 }}</span>, there is an
 <span class="cmake-command">include()</span> command:</p>
 {% highlight cmake %}
-include(Platform/${CMAKE_SYSTEM_NAME}-Initialize OPTIONAL).
+include(Platform/${CMAKE_SYSTEM_NAME}-Initialize OPTIONAL)
 {% endhighlight %}
 <p>What <span class="cmake-command">include()</span> does is basically running
 CMake code from another file. In this case, you can figure out that the value of
-<span class="cmake-var">CMAKE_SYSTEM_NAME</span> is Darwin based on the filename
+<span class="cmake-var">CMAKE_SYSTEM_NAME</span> is Darwin<small><sup>*</sup></small> based on the filename
 shown in the first line of Part 1.</p>
 
 <p>Therefore, I have to trace back to that included file. At line 286 in
-<span class="filename">{{ page.file2 }}</span>, there is a
+<span class="text-box filename">{{ page.file2 }}</span>, there is a
 <span class="cmake-command">message()</span> command:</p>
 {% highlight cmake %}
 message(WARNING "Ignoring CMAKE_OSX_SYSROOT value:\n ${CMAKE_OSX_SYSROOT}\n"
@@ -68,7 +65,7 @@ somehow is computed as <span class="text-box">{{ page.value }}</span>. And this 
 
 <h3>Why the warning appeared</h3>
 <p>When cmake is first run in an empty build tree, it creates a
-<span class="filename">CMakeCache.txt</span> file
+<span class="text-box filename">CMakeCache.txt</span> file
 and populates it with customizable settings for the project. The value of
 <span class="cmake-var">CMAKE_OSX_SYSROOT</span> is computed during this first
 run. Because the first time I ran cmake for my project, my system is still at
@@ -82,3 +79,6 @@ operating system to macOS 11.0.1 Big Sur.</p>
 <p>In order to fix the problem, all I need to do is to change the value of
 <span class="cmake-var">CMAKE_OSX_SYSROOT</span> to the right version number,
 which is 11.0 now on my operating system. And cmake will run without warning again!</p>
+
+<p><small><sup>*</sup> Darwin is a free and open source operating system
+    released by Apple and is the basis of macOS.</small></p>

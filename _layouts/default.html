@@ -11,15 +11,18 @@
             {% endif%}
         </title>
         <link rel="stylesheet" href="/assets/css/theme.css">
+        <script src="https://kit.fontawesome.com/98bc73df31.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <header>
             <div id="profile">
-                <div id="personal-info">
-                    <a href="/" id="avatar"><img src="/assets/img/avatar.jpeg" alt="avatar"></a>
-                    <h1>Michael</h1>
-                </div>
+                <a href="/" id="avatar"><img src="/assets/img/avatar.jpeg" alt="avatar"></a>
+                <h1>Michael</h1>
+                <ul>
+                    <li><a class="icon-github" href="https://github.com/michael-t94"><i class="fab fa-github"></i></a></li>
+                    <!-- <li><a href="https://twitter.com/home?lang=en"><i class="fab fa-twitter"></i></a> -->
+                </ul>
             </div>
 
             {% include navigation.html %}
